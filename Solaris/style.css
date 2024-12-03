@@ -1,0 +1,79 @@
+
+
+body { /* en body klass vilket kommer förse styling på hela body elementet i HTML */
+    font-family: "Arial", sans-serif; /* Använder Arial som standard font */
+    margin: 0;/* sätter margin till 0 vilket tar bort standrardmarginalen */
+    background: linear-gradient(to bottom, #4542ff, #0f4996d7, yellow);
+    color: white;/* Använder en vit textfärg */ 
+    text-align: center;/* kommer att horisontellt centrera texten */
+    
+    min-height: 100vh;/* Säger till bodyn att den ska täka hela webbläsarens höjd */
+    
+    
+}
+
+
+  
+/* Ger header elementet styling */
+header {
+    padding:20px;/* ger mer utrymme inuti header elmentet */
+    background:#1c1c1c;/* använder en svart bakgrunds färg*/
+    position:sticky;/* ser till så att headern stannar kvar högst upp i sidan*/
+    top:0;/* kommer att fästa headern högst upp */
+}
+
+input[type="text"] {/*Stylingen för sökfältet   */
+    padding:10px;/* lägger in utrymme */
+    border:none;/* ser till att elementet inte har en standardram */
+    border-radius:5px;/* ser till att runda hörnen */
+    margin-top:10px;/* mer utrymme längre upp i fältet */
+}
+#sol-system {/* Styling som kommer användas till att visa planeterna  */
+    display:flex;/* med flexbox förenklas layouten av sidan och lättare at placera stylingen */
+    flex-wrap:wrap;/* Om innehållet inte får plats på en rad så byter det resterande innehållet till en annan rad*/
+    justify-content:center ;/* ger innehållet en horisontell centrering */
+    gap:20px;/* Ger planeterna mer utrymme  */
+    margin: 40px;/* ger behållaren 40px av utrymme */
+}
+ .planet {  /* ger varje planet styling i layoputen */
+    width:100px;/* bredden */
+    height:100px;/* höjden */
+    border-radius:50%;/* gör så att planeterna blir runda */
+    display:flex;/* användningen av flex kommer centrera innehållet*/
+    align-items:center;/* vertikalt */
+    justify-content:center;/* horisontell */
+    background-color:#b33232;/* ger innehållet en standard bakgrundsfärg */
+    transition:transform 0.3 ease;/* ger animationen en mjukare övergång */
+    cursor:pointer;/* ger muspekaren en hand när den är över ett speciellt element */
+}
+
+.planet:hover {/* ger planeterna en speciell style vid hover  */
+    transform:scale(1.2) rotate(360deg);/* kommer att rotera och öka dess scale  */
+    animation: spin 1s linear infinite;/* en snurr-animation startas */
+}
+
+.gömd {/* döljer detalj rutan */
+    display:none;/* kommer att helt gömma elementet*/
+}
+#detaljer-planeter {/* styling som tillämpas till detaljvyin av planeterna */
+    margin:20px;/* lägger till utrymme */
+}
+
+@keyframes spin {/* keyframes används för en roterande animation*/
+    0% {
+        transform: rotate(0deg);/* Vid 0 grader startar rotationen*/
+    }
+    100% {
+        transform: rotate(360deg);/* kommer sluta rotationen vid 360 grader */
+    }
+}
+
+footer {/* Footer elementet*/
+    margin-top:0px;/* ger ingen marginal ovanför elementet */
+    padding:0px;/* ger inget inre utrymme */
+    background: #1c1c1c;/* bakgrundsfärg*/
+    position: absolute;/* ger den en position längst ner på sidan */
+    width: 100%;/* bredden */
+    bottom:0;/* fäster den längst ner*/
+    text-align: center;/* centrerar texten*/
+}
